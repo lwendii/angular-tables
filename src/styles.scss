@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+$primary-900: #06504a;
+$primary-500: #009996; // P
+$primary-50: #e1f2f3;
+
+$complementary-900: #990003;
+
+$analogous-green-600: #00994a;
+$analogous-blue-900: #004f99;
+
+body {
+    background-color: $primary-50;
+    color: $primary-900;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
