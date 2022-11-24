@@ -6,9 +6,9 @@
     </div>
 
     <div class="row">
-        <div class="col">
+        <div class="col mat-elevation-z8 demo-table">
             
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+            <table mat-table [dataSource]="dataSource" >
                 <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
                     <th mat-header-cell *matHeaderCellDef>
                         {{column.header}}
@@ -21,6 +21,11 @@
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
+
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                            showFirstLastButtons
+                            aria-label="Select page">
+            </mat-paginator>
         
         </div>
     </div>
