@@ -30,8 +30,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class OverviewComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-
-  
   columns = [
     {
       columnDef: 'position',
