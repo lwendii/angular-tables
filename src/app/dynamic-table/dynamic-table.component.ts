@@ -18,7 +18,7 @@ import { PeriodicElementParameter } from '../_shared/models/periodic-element-par
 // ];
 
 const COMPLEX_DATA: PeriodicElement[] = [
-  { name: 'Hydrogen', parameters: [ { parameterName: 'weight', parameterValue: 1.0079, parameterDisplayName: 'Weight' }, { parameterName: 'symbol', parameterValue: 'H', parameterDisplayName: 'Symbol' } ] },
+  { name: 'Hydrogen', parameters: [ { parameterName: 'weight', parameterValue: 1.0079, parameterDisplayName: 'Weight' }, { parameterName: 'symbol', parameterValue: 'H', parameterDisplayName: 'Symbol' }, { parameterName: 'position', parameterValue: 1, parameterDisplayName: 'No.'} ] },
   { name: 'Helium', parameters: [ { parameterName: 'weight', parameterValue: 4.0026, parameterDisplayName: 'Weight' }, { parameterName: 'symbol', parameterValue: 'He', parameterDisplayName: 'Symbol'} ] },
   { name: 'Lithium', parameters: [ { parameterName: 'weight', parameterValue: 6.941, parameterDisplayName: 'Weight' }, { parameterName: 'symbol', parameterValue: 'Li', parameterDisplayName: 'Symbol'} ] },
 ];
@@ -46,7 +46,10 @@ export class DynamicTableComponent {
       let colDef = { 
         columnDef: param.parameterName, 
         header: param.parameterDisplayName, 
-        cell: (element: PeriodicElement) => `${element.parameters.find((x: PeriodicElementParameter) => x.parameterName === param.parameterName)?.parameterValue}`
+        cell: (element: PeriodicElement) => {
+          const value = element.parameters.find((x: PeriodicElementParameter) => x.parameterName === param.parameterName)?.parameterValue;
+          return `${value ? value : 'nA'}`
+        }
       }
 
         console.log('param name', param.parameterName)
