@@ -7,12 +7,14 @@ import { OverviewComponent } from './overview/overview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './_shared/material/material.module';
 import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
+import { SimpleTableComponent } from './simple-table/simple-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OverviewComponent,
-    DynamicTableComponent
+    DynamicTableComponent,
+    SimpleTableComponent
   ],
   imports: [
     BrowserModule,
